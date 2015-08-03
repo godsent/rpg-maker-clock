@@ -44,15 +44,16 @@ class Clock
 
   def tick 
     if @ticked % CHECK == 0 
-      prev = @last_ticked_at 
+      @mh += mh_seconds if mh_seconds > MAX_ALLOWED_MH 
       @last_ticked_at = Time.now.to_f
-
-      if prev && (@last_ticked_at - prev) > MAX_ALLOWED_MH 
-        @mh += @last_ticked_at - prev
-      end
     end
 
     @ticked += 1
+  end
+
+  def mh_seconds
+    return 0 unless @last_ticked_at
+    Time.now.to_f - @last_ticked_at
   end
 
   def seconds_in_game
