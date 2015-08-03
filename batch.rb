@@ -58,7 +58,7 @@ class Clock
   end
 
   def seconds_in_game
-    (Time.now.to_f - @started_at - @mh).to_i
+    (Time.now.to_f - @started_at - @mh - mh_seconds).to_i
   end
 end
 
