@@ -6,4 +6,4 @@ Simple clock for rpg maker
 - Check constants at Clock class, edit for your needs.
 - To start clock run ```Clock.start!```
 - To receive number of seconds player have been played run ```Clock.seconds_in_game```
-- To flush clock run ```Clock.fush```
+- To flush clock run ```Clock.flush!```
